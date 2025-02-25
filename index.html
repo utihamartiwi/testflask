@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Cloud Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        textarea { width: 80%; height: 100px; margin-bottom: 10px; }
+        button { padding: 10px 20px; }
+        img { margin-top: 20px; max-width: 100%; }
+    </style>
+</head>
+<body>
+    <h1>Word Cloud Generator</h1>
+    <form method="POST">
+        <textarea name="text" placeholder="Masukkan teks di sini..." required></textarea><br>
+        <button type="submit">Generate</button>
+    </form>
+
+    {% if img_data %}
+        <h2>Hasil Word Cloud</h2>
+        <img src="data:image/png;base64,{{ img_data }}" alt="Word Cloud">
+    {% endif %}
+</body>
+</html>
